@@ -1,21 +1,28 @@
-import carro from "../img/Orange_Enzo_Ferrari_(7191948164).jpg";
+
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-dark {styles.navbar} ">
-    
-    <div className="container-fluid">
-    <p> Parking Controll</p> <br />
-    <p className="sistema">Sistema de Controle de Estacionamento para Veículos.</p>
+    <nav className="navbar navbar-expand-lg bg-dark {styles.navbar} sticky-top">
+
+      <div className="container-fluid">
+        <div>
+         <a href="/"><p> Parking <span>Controll</span></p> <br /></a> 
+          <p className="sistema">Sistema de Controle de Estacionamento para Veículos.</p>
+        </div>
         <nav>
-        <a href="" className="link btn btn-outline-danger "> Cadastrar </a>
-        <a href=""  className="link btn btn-outline-danger"> Deletar </a>
-        <a href=""  className="link btn btn-outline-danger">Atualizar</a>
-        <a href=""  className="link btn btn-outline-danger">Buscar</a>
+          <Link className="link btn btn-outline-danger " to={"/Cadastrar"}>Cadastrar</Link>
+          
+          <a href="" className="link btn btn-outline-danger"> Deletar </a>
+          <a href="" className="link btn btn-outline-danger">Atualizar</a>
+          <a href="" className="link btn btn-outline-danger">Buscar</a>
         </nav>
-    </div>
+      </div>
+
     </nav>
+
+    
   );
 };
 

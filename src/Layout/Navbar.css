@@ -27,7 +27,17 @@ p{
     display: contents;
 }
 
+span{
+
+  color: #dc3545;
+}
+
 .sistema{
 
     font-size: smaller;
+}
+
+a{
+
+  text-decoration: none;
 }
