@@ -3,10 +3,14 @@ import "./Home.css"
 const Home = () => {
 
 
-    return(
+    return (
 
-        <div className="container-fluid d-flex justify-content-center">
-            <img src={Carro} alt="" />
+        <div className="container-fluid d-flex justify-content-center container">
+            <img src={Carro} alt="Carro" />
+            <div className="constainer-fluid texto">
+                <p className="parking"> Parking <span>Controll</span></p>
+                <p className="parking">Sistema de Controle de Estacionamento para Veículos.</p>
+            </div>
         </div>
     );
 

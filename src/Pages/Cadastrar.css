@@ -4,5 +4,11 @@
 display:grid;
 justify-content: center;
 align-items: center;
+padding: 20px;
 
+}
+
+h1 , label{
+
+    color: #ffff;
 }
