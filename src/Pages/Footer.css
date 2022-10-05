@@ -4,3 +4,16 @@
     margin: auto;
     padding: 12px;
 }
+
+
+@media  (max-width: 720px)  {
+    
+
+    .rodapeTexto{
+
+        display: grid;
+        margin: auto;
+        padding: 0px;
+    }
+
+}
