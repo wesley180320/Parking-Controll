@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./Cadastrar.css"
+import Button from "../Components/Button.jsx";
+
 
 const Cadastrar = () => {
 
@@ -11,6 +13,8 @@ const Cadastrar = () => {
     const [nomeResponsavel, setNomeResponsavel] = useState("");
     const [apartamento, setApartamento] = useState("");
     const [bloco, setBloco] = useState("");
+    const [marca, setMarca] = useState("");
+
 
     const handleSubmit = (e) => {
 
@@ -19,20 +23,23 @@ const Cadastrar = () => {
 
 
 
-        if(verificacao() == false){
+        if (verificacao() == false) {
 
-        setNome("");
-        setNumeroGaragem("");
-        setPlaca("");
-        setModelo("");
-        setCor("");
-        setNomeResponsavel("");
-        setApartamento("");
-        setBloco("");
+            setNome("");
+            setNumeroGaragem("");
+            setPlaca("");
+            setModelo("");
+            setCor("");
+            setNomeResponsavel("");
+            setApartamento("");
+            setBloco("");
+            setMarca("");
 
-        console.log("ola")
+            enviarDados()
+            
+            alert("Dados Enviados Com Sucesso")
 
-        }else if (verificacao() == true){
+        } else if (verificacao() == true) {
 
             console.log("ol")
 
@@ -43,14 +50,14 @@ const Cadastrar = () => {
 
     }
 
-    
-    const verificacao = () =>{
+
+    const verificacao = () => {
 
 
-        if( nome === "" || numeroGaragem === "" || placa === "" || modelo === "" || cor === "" || nomeResponsavel === "" || apartamento === "" || bloco === "" ){
+        if (nome === "" || numeroGaragem === "" || placa === "" || modelo === "" || cor === "" || nomeResponsavel === "" || apartamento === "" || bloco === "") {
 
             return true;
-        }else{
+        } else {
 
             return false;
 
@@ -58,16 +65,34 @@ const Cadastrar = () => {
 
     }
 
+    const enviarDados = async () => {
+
+        let data = { "id": null, "parkingSpotnumber": numeroGaragem, "licenseplatecar": placa, "brandCar": marca, "modelCar": modelo, "colorCar": cor, "registrationDate": null, "responsibleName": nomeResponsavel, "apartment": apartamento, "block": bloco };
+        fetch("https://parkinspott.herokuapp.com/parking-spot/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+        }).then(res => {
+            console.log("Promise resolved", res);
+        });
+
+
+    }
+
+
 
     return (
         <>
+
+
             <div className="formulario" onSubmit={handleSubmit} >
+                <div>
+                    <Button />
+                </div>
                 <h1 className="fw-bold mt-2 "> Formulário de Cadastro</h1>
                 <form action="" className="container-auto">
-                    <div className="col-12">
-                        <label htmlFor="name" className="form-label mt-2">Nome:</label>
-                        <input type="text" name="name" placeholder="Nome" className="form-control fw-lighter" onChange={(e) => setNome(e.target.value)} value={nome}></input>
-                    </div>
                     <div className="col-12">
                         <label htmlFor="name" className="form-label mt-2">Numero da Garagem:</label>
                         <input type="text" name="numeroGaragem" placeholder="Numero Garagem" className="form-control fw-lighter" onChange={(e) => setNumeroGaragem(e.target.value)} value={numeroGaragem}></input>
@@ -75,6 +100,10 @@ const Cadastrar = () => {
                     <div className="col-12">
                         <label htmlFor="name" className="form-label mt-2">Placa:</label>
                         <input type="text" name="placa" placeholder="Placa" className="form-control fw-lighter" onChange={(e) => setPlaca(e.target.value)} value={placa}></input>
+                    </div>
+                    <div className="col-12">
+                        <label htmlFor="name" className="form-label mt-2">Marca:</label>
+                        <input type="text" name="placa" placeholder="Marca" className="form-control fw-lighter" onChange={(e) => setMarca(e.target.value)} value={marca}></input>
                     </div>
                     <div className="col-12">
                         <label htmlFor="name" className="form-label mt-2">Modelo:</label>
