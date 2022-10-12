@@ -21,8 +21,6 @@ const Cadastrar = () => {
         e.preventDefault();
         console.log(nome)
 
-
-
         if (verificacao() == false) {
 
             setNome("");
@@ -36,12 +34,11 @@ const Cadastrar = () => {
             setMarca("");
 
             enviarDados()
-            
+
             alert("Dados Enviados Com Sucesso")
 
         } else if (verificacao() == true) {
 
-            console.log("ol")
 
             alert("Por favor preencher todos os dados! ");
 
@@ -78,7 +75,6 @@ const Cadastrar = () => {
             console.log("Promise resolved", res);
         });
 
-
     }
 
 
@@ -91,38 +87,38 @@ const Cadastrar = () => {
                 <div>
                     <Button />
                 </div>
-                <h1 className="fw-bold mt-2 "> Formulário de Cadastro</h1>
+                <h1 className="fw-bold mt-1 "> Formulário de Cadastro</h1>
                 <form action="" className="container-auto">
                     <div className="col-12">
-                        <label htmlFor="name" className="form-label mt-2">Numero da Garagem:</label>
+                        <label htmlFor="name" className="form-label mt-1">Numero da Garagem:</label>
                         <input type="text" name="numeroGaragem" placeholder="Numero Garagem" className="form-control fw-lighter" onChange={(e) => setNumeroGaragem(e.target.value)} value={numeroGaragem}></input>
                     </div>
                     <div className="col-12">
-                        <label htmlFor="name" className="form-label mt-2">Placa:</label>
+                        <label htmlFor="name" className="form-label mt-1">Placa:</label>
                         <input type="text" name="placa" placeholder="Placa" className="form-control fw-lighter" onChange={(e) => setPlaca(e.target.value)} value={placa}></input>
                     </div>
                     <div className="col-12">
-                        <label htmlFor="name" className="form-label mt-2">Marca:</label>
+                        <label htmlFor="name" className="form-label mt-1">Marca:</label>
                         <input type="text" name="placa" placeholder="Marca" className="form-control fw-lighter" onChange={(e) => setMarca(e.target.value)} value={marca}></input>
                     </div>
                     <div className="col-12">
-                        <label htmlFor="name" className="form-label mt-2">Modelo:</label>
+                        <label htmlFor="name" className="form-label mt-1">Modelo:</label>
                         <input type="text" name="modelo" placeholder="Modelo" className="form-control fw-lighter" onChange={(e) => setModelo(e.target.value)} value={modelo}></input>
                     </div>
                     <div className="col-12">
-                        <label htmlFor="name" className="form-label mt-2">Cor:</label>
+                        <label htmlFor="name" className="form-label mt-1">Cor:</label>
                         <input type="text" name="cor" placeholder="Cor" className="form-control fw-lighter" onChange={(e) => setCor(e.target.value)} value={cor}></input>
                     </div>
                     <div className="col-12">
-                        <label htmlFor="name" className="form-label mt-2">Nome do Responsável:</label>
+                        <label htmlFor="name" className="form-label mt-1">Nome do Responsável:</label>
                         <input type="text" name="nomeResponsavel" placeholder="Nome do Responsável" className="form-control fw-lighter" onChange={(e) => setNomeResponsavel(e.target.value)} value={nomeResponsavel}></input>
                     </div>
                     <div className="col-12">
-                        <label htmlFor="name" className="form-label mt-2">Apartamento:</label>
+                        <label htmlFor="name" className="form-label mt-1">Apartamento:</label>
                         <input type="text" name="apartamento" placeholder="Apartamento" className="form-control fw-lighter" onChange={(e) => setApartamento(e.target.value)} value={apartamento}></input>
                     </div>
                     <div className="col-12">
-                        <label htmlFor="name" className="form-label mt-2">Bloco:
+                        <label htmlFor="name" className="form-label mt-1">Bloco:
                         </label>
                         <input type="text" name="Bloco" placeholder="Bloco" className="form-control fw-lighter" onChange={(e) => setBloco(e.target.value)} value={bloco}>
                         </input>
@@ -130,7 +126,6 @@ const Cadastrar = () => {
                     <button type={"submit"} className="btn btn-success mt-4 fw-bold">Enviar</button>
                 </form>
             </div>
-
 
 
         </>

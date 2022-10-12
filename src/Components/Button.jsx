@@ -10,7 +10,7 @@ const Button = () => {
         <div className="d-flex justify-content-center">
         <Link className="link btn btn-outline-danger" to={"/Deletar"}> Deletar </Link>
         <Link className="link btn btn-outline-danger" to={"/"}> Atualizar </Link>
-          <Link className="link btn btn-outline-danger " to={"/Cadastrar"}>Buscar</Link>
+          <Link className="link btn btn-outline-danger " to={"/Buscar"}>Buscar</Link>
         </div>
          
         </>
