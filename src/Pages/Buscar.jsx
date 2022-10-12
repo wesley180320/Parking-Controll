@@ -8,42 +8,51 @@ const Buscar = () => {
 
     
 
-let a = 0;
 
 
 const [contrato, setContrato] = useState([]);
-const [page, setPage] = useState(a);
+const [proxima, setProxima] = useState(1);
 
+function proximo () {
 
-
-
-const url2 = `https://parkinspott.herokuapp.com/parking-spot?page=${a}&size=1sort=registrationDate,ASC`;
-
-
-
-useEffect( () => {
-
-    async function fetchData(){
-        const res = await fetch(url2);
-        const obj = await res.json();
-        const data = obj['content']
         
-
-        setContrato(data);
-
-        console.log(obj)
-
-        // data.forEach(element => {
-        //     console.log(element.id)
-        // });
-    }
+        setProxima( proxima+ 1)
+        console.log(proxima)
+        fetchData(proxima);
     
-   fetchData();
+
+
+  
+}
+function voltar (e) {
+
+    setProxima(e);
+    console.log(e)
+    fetchData(e);
+}
+
+
+async function fetchData(a){
+    const url2 = `https://parkinspott.herokuapp.com/parking-spot?page=${a}&size=1sort=registrationDate,ASC`;
+    const res = await fetch(url2);
+    const obj = await res.json();
+    const data = obj['content']
+    
+
+    setContrato(data);
+
+    console.log(obj)
+
+    // data.forEach(element => {
+    //     console.log(element.id)
+    // });
+}
+
+useEffect(  () => {
+
+   fetchData(0);
 },[])
-
-
-
-
+    
 
     return (
 
@@ -61,8 +70,8 @@ useEffect( () => {
            
                ))}
                <div className="d-flex justify-content-center">
-               <button className="btn btn-danger col-4 mt-1 ">Voltar</button>
-               <button className="btn btn-success col-4 mt-1">Proximo</button>
+               <button onClick={ (e) => voltar(proxima-1)  } className="btn btn-danger col-4 mt-1 ">Voltar</button>
+               <button onClick={proximo} className="btn btn-success col-4 mt-1">Proximo</button>
                </div>
           
             </ul>

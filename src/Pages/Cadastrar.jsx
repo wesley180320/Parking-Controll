@@ -51,7 +51,7 @@ const Cadastrar = () => {
     const verificacao = () => {
 
 
-        if (nome === "" || numeroGaragem === "" || placa === "" || modelo === "" || cor === "" || nomeResponsavel === "" || apartamento === "" || bloco === "") {
+        if (numeroGaragem === "" || placa === "" || modelo === "" || cor === "" || nomeResponsavel === "" || apartamento === "" || bloco === "") {
 
             return true;
         } else {
