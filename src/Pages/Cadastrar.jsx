@@ -87,8 +87,8 @@ const Cadastrar = () => {
                 <div>
                     <Button />
                 </div>
-                <h1 className="fw-bold mt-1 "> Formulário de Cadastro</h1>
-                <form action="" className="container-auto">
+                <h1 className="fw-bold  text-center mt-1 "> Formulário de Cadastro</h1>
+                <form action="" className="container-auto m-auto text-center col-7 col-lg-12  ">
                     <div className="col-12">
                         <label htmlFor="name" className="form-label mt-1">Numero da Garagem:</label>
                         <input type="text" name="numeroGaragem" placeholder="Numero Garagem" className="form-control fw-lighter" onChange={(e) => setNumeroGaragem(e.target.value)} value={numeroGaragem}></input>
