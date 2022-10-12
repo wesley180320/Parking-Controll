@@ -16,4 +16,8 @@
         padding: 0px;
     }
 
+    .rodape{
+
+        position: sticky;
+    }
 }
