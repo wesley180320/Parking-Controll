@@ -8,8 +8,6 @@ const Buscar = () => {
 
     
 
-
-
 const [contrato, setContrato] = useState([]);
 const [proxima, setProxima] = useState(1);
 
@@ -21,14 +19,12 @@ function proximo () {
         fetchData(proxima);
     
 
-
-  
 }
-function voltar (e) {
+function voltar () {
 
-    setProxima(e);
-    console.log(e)
-    fetchData(e);
+    setProxima( proxima-1)
+    console.log(proxima)
+    fetchData(proxima);
 }
 
 
@@ -70,7 +66,7 @@ useEffect(  () => {
            
                ))}
                <div className="d-flex justify-content-center">
-               <button onClick={ (e) => voltar(proxima-1)  } className="btn btn-danger col-4 mt-1 ">Voltar</button>
+               <button onClick={ voltar  } className="btn btn-danger col-4 mt-1 ">Voltar</button>
                <button onClick={proximo} className="btn btn-success col-4 mt-1">Proximo</button>
                </div>
           
