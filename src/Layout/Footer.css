@@ -3,10 +3,17 @@
     display: block;
     margin: auto;
     padding: 12px;
+   
 }
 
+.rodape{
 
-@media  (max-width: 920px)  {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media  (max-width: 1600px)  {
     
 
     .rodapeTexto{
@@ -19,5 +26,7 @@
     .rodape{
 
         width: 100%;
+        position: inherit;
+        bottom: auto;
     }
 }

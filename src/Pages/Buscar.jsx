@@ -59,7 +59,7 @@ const Buscar = () => {
 
             <div className="container d-flex justify-content-center mt-3">
                 <h1> Cadastrados</h1>
-                <ul className="list-group col-6 ">
+                <ul className="list-group col-10 col-md-6 ">
 
                     {contrato.map((contrato) => (
 
@@ -71,7 +71,7 @@ const Buscar = () => {
 
                     {x && <li className="list-group-item text-center" > SEM CADASTROS PARA MOSTRAR</li>}
                     <div className="d-flex justify-content-center">
-                        <button onClick={(e) => fetchData(proxima - 1)} className="btn btn-danger col-6 mt-2 ">Voltar</button>
+                        <button onClick={(e) => fetchData(proxima - 1)} className="btn btn-danger col-6 mt-2">Voltar</button>
                         <button onClick={(e) => fetchData(proxima + 1)} className="btn btn-success col-6 mt-2 ">Proximo</button>
                     </div>
                 </ul>

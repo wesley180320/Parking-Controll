@@ -54,7 +54,7 @@ const Deletar = () => {
 
                 <p>Parking <span>Controll</span></p>
                 <form onSubmit={handleSubmit}>
-                    <div className="col-5 d-flex m-auto mt-3 ">
+                    <div className="col-12 col-md-5 d-flex m-auto mt-5 ">
                         <input type="text" name="name" placeholder="Deletar por id" className="form-control fw-lighter me-3" onChange={(e) => setDeletar(e.target.value)} value={deletar} ></input>
                         <button type={"submit"} className="btn btn-danger"> Deletar</button>
                     </div>

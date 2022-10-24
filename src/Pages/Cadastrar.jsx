@@ -121,7 +121,7 @@ const Cadastrar = () => {
                         <input type="text" name="Bloco" placeholder="Bloco" className="form-control fw-lighter" onChange={(e) => setBloco(e.target.value)} value={bloco}>
                         </input>
                     </div>
-                    <button type={"submit"} className="btn btn-success mt-5 fw-bold">Enviar</button>
+                    <button type={"submit"} className="btn btn-success mt-2 mb-2 fw-bold">Enviar</button>
                 </form>
             </div>
 
