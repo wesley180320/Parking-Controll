@@ -9,6 +9,7 @@ const Buscar = () => {
     const [contrato, setContrato] = useState([]);
     const [proxima, setProxima] = useState(1);
     const [x, setX] = useState();
+    const [y, setY] = useState();
 
 
 
@@ -22,8 +23,9 @@ const Buscar = () => {
             setProxima(0);
         }
 
+       
         const url2 = `https://parkinspott.herokuapp.com/parking-spot?page=${a}&size=1sort=registrationDate,ASC`;
-        const res = await fetch(url2);
+        const res = await fetch(url2)
         const obj = await res.json();
         const data = obj["content"];
 
@@ -66,10 +68,10 @@ const Buscar = () => {
                         <li className="list-group-item" key={contrato.id} >Id: {contrato.id} <br /> <hr /> Numero Estacionamento: {contrato.parkingSpotnumber} <br /> <hr /> Placa Numero: {contrato.licenseplatecar} <br /> <hr /> Marca: {contrato.brandCar} <br /> <hr /> Modelo: {contrato.modelCar}
                             <br /> <hr /> Color Car: {contrato.colorCar} <br /> <hr /> Data de Registro: {contrato.registrationDate} <br /> <hr /> Responsavel: {contrato.responsibleName} <br /> <hr /> Apartamento: {contrato.apartment}  <br /> <hr /> Bloco: {contrato.block}
                         </li>
-
                     ))}
 
                     {x && <li className="list-group-item text-center" > SEM CADASTROS PARA MOSTRAR</li>}
+                    {y && <li className="list-group-item text-center" > CARREGANDO....</li>}
                     <div className="d-flex justify-content-center">
                         <button onClick={(e) => fetchData(proxima - 1)} className="btn btn-danger col-6 mt-2">Voltar</button>
                         <button onClick={(e) => fetchData(proxima + 1)} className="btn btn-success col-6 mt-2 ">Proximo</button>
