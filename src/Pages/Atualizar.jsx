@@ -135,7 +135,7 @@ const Atualizar = () => {
                     <label htmlFor="name" className="form-label mt-1">Placa:</label>
                     <input type="text" name="placa" placeholder="Placa" className="form-control fw-lighter" onChange={(e) => setPlaca(e.target.value)} value={placa}></input>
                 </div>
-                <div className="col-8 col-md-3">
+                <div className="col-8 col-md-4">
                     <label htmlFor="name" className="form-label mt-1">Marca:</label>
                     <input type="text" name="placa" placeholder="Marca" className="form-control fw-lighter" onChange={(e) => setMarca(e.target.value)} value={marca}></input>
                 </div>
